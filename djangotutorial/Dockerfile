@@ -35,5 +35,5 @@ RUN chmod -R og+w ${WORK_DIR}/static/
 # Переключаемся на созданного юзера
 USER ${USER}
 
-# Запускаем сервер разработки
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Запускаем entrypoint (вместо запуска сервера)
+ENTRYPOINT ["sh", "/usr/src/app/entrypoint.sh"]
